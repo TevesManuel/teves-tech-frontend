@@ -2,6 +2,7 @@ import { useEffect, useRef } from "preact/hooks";
 import "./app.css";
 import Navbar from "./components/Navbar/Navbar";
 import Services from "./components/Services/Services";
+import Footer from "./components/Footer/Footer";
 
 export function App() {
     const vantaRef = useRef(null);
@@ -57,6 +58,7 @@ export function App() {
             </div>
 
             <Services />
+            <Footer />
         </>
     );
 }
