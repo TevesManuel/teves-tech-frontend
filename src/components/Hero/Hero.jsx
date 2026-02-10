@@ -8,26 +8,39 @@ export default function Hero() {
     useEffect(() => {
         if (!vantaRef.current) return;
 
-        // esperar a que VANTA exista (CDN)
         if (window.VANTA) {
+            // Detectamos si es mobile para reducir la carga visual
+            const isMobile = window.innerWidth < 768;
+
             effectRef.current = window.VANTA.NET({
                 el: vantaRef.current,
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: false,
-                minHeight: 200,
-                minWidth: 200,
-                scale: 1,
-                scaleMobile: 1,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
                 color: 0x3fb1ff,
                 backgroundColor: 0x0,
-                points: 17,
-                maxDistance: 24
+                // --- AJUSTES PARA MOBILE ---
+                points: isMobile ? 17 : 17, // Menos puntos en mobile
+                maxDistance: isMobile ? 15 : 24, // Distancia más corta para que no se crucen tanto
+                spacing: isMobile ? 15 : 15, // Más espacio entre puntos si usas otras variantes
             });
         }
 
+        // Opcional: Resize handler para que Vanta se entere si giras el celu
+        const handleResize = () => {
+            if (effectRef.current) {
+                effectRef.current.resize();
+            }
+        };
+        window.addEventListener('resize', handleResize);
+
         return () => {
-            effectRef.current?.destroy();
+            if (effectRef.current) effectRef.current.destroy();
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
