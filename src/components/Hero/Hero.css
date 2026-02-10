@@ -14,14 +14,32 @@
 }
 
 .HeroStartButton {
-    margin: 10px;
+    margin-top: 20px;
     border-radius: 100px;
     padding: 5px 20px 5px 20px;
     border: 0;
     background: linear-gradient(90deg, #7253dc, #36a9e8);
     color: white;
     font-family: 'Roboto';
-    font-weight: bolder;
-    font-size: 1.12rem;
+    font-weight: 600;
+    font-size: 2rem;
     cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .HeroTextContainer {
+        width: 80%;
+        align-items: baseline;
+        margin-left: 0;
+        font-size: 1rem;
+    }
+    #home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .HeroStartButton {
+        font-size: 1.5rem;
+    }
 }
