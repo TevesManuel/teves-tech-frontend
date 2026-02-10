@@ -1,0 +1,22 @@
+.bannerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98dvw;
+    height: 97dvh;
+}
+
+.HeroTextContainer {
+    z-index: 1;
+    position: relative;
+    color: white;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 2dvw;
+    margin-left: 10%;
+}

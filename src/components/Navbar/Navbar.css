@@ -1,0 +1,126 @@
+/* Estilos Base */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all 0.4s ease;
+  z-index: 1000;
+  background-color: #030615 !important;
+  border: 2px solid #121b2c;
+  background: transparent;
+}
+
+.navbar.scrolled {
+  padding: 0.8rem 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/* Links de Navegación */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease; /* Suaviza el movimiento y color */
+}
+
+/* --- EFECTO HOVER SOLICITADO --- */
+.nav-links li a:hover {
+  color: #00d4ff; /* Color cyan tecnológico */
+  transform: translateY(-3px); /* Se levanta un poco */
+}
+
+/* Subrayado animado */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #00d4ff;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Estilo especial para el último botón (CTA) */
+.nav-cta {
+  background: linear-gradient(90deg, #00d4ff, #0072ff);
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  color: white !important;
+}
+
+.nav-cta:hover {
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+/* --- RESPONSIVE --- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    flex-direction: column;
+    background: #0a0a12;
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+    transition: 0.5s;
+    gap: 1.5rem;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+}
+
+.li-nav-links {
+    display: flex;
+    align-items: center;
+}
+
+/* Animación de la hamburguesa (X) */
+.bar.open:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.bar.open:nth-child(2) { opacity: 0; }
+.bar.open:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
