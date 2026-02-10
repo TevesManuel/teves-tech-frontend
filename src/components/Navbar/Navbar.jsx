@@ -32,11 +32,11 @@ const Navbar = () => {
         </button>
         
         <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
-          <li className='li-nav-links'><a href="#home" onClick={() => setIsOpen(false)}>Home</a></li>
-          <li className='li-nav-links'><a href="#services" onClick={() => setIsOpen(false)}>Services</a></li>
-          <li className='li-nav-links'><a href="#solutions" onClick={() => setIsOpen(false)}>Solutions</a></li>
-          <li className='li-nav-links'><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
-          <li className='li-nav-links'><a href="#contact" className="nav-cta" onClick={() => setIsOpen(false)}>Contact</a></li>
+          <li className='li-nav-links'><a href="#home" onClick={() => setIsOpen(false)}>Inicio</a></li>
+          <li className='li-nav-links'><a href="#services" onClick={() => setIsOpen(false)}>Servicios</a></li>
+          <li className='li-nav-links'><a href="#solutions" onClick={() => setIsOpen(false)}>Soluciones</a></li>
+          <li className='li-nav-links'><a href="#about" onClick={() => setIsOpen(false)}>Acerca de</a></li>
+          <li className='li-nav-links'><a href="#contact" className="nav-cta" onClick={() => setIsOpen(false)}>Contacto</a></li>
         </ul>
       </div>
     </nav>

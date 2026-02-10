@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "preact/hooks";
 import "./app.css";
 import Navbar from "./components/Navbar/Navbar";
+import Services from "./components/Services/Services";
 
 export function App() {
     const vantaRef = useRef(null);
@@ -51,8 +52,11 @@ export function App() {
                         WebkitTextFillColor: "transparent"
                     }}>EL MANAÑA</b>, HOY.</h1>
                     <h3 style={{margin: 0}}>Soluciones de software y hardware que impulsan el crecimiento de tu negocio.</h3>
+                    <button className="HeroStartButton">EMPEZAR</button>
                 </div>
             </div>
+
+            <Services />
         </>
     );
 }
