@@ -1,8 +1,11 @@
-name: Build & Deploy Preact to GitHub Pages
+name: CI
 
 on:
   push:
     branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -26,17 +29,17 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Build
+      - name: Build Preact (Vite)
         run: npm run build
 
-      # Subir artifact para Pages
-      - name: Upload Pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
   deploy:
     needs: build
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     environment:
@@ -44,6 +47,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
