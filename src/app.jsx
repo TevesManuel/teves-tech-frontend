@@ -34,7 +34,7 @@ export function App() {
 
     return (
         <>
-            <Navbar />
+            <Navbar /> 
 
             <div
                 id="vantaNet"
