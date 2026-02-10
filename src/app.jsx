@@ -1,62 +1,14 @@
-import { useEffect, useRef } from "preact/hooks";
 import "./app.css";
 import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
 import Services from "./components/Services/Services";
 import Footer from "./components/Footer/Footer";
 
 export function App() {
-    const vantaRef = useRef(null);
-    const effectRef = useRef(null);
-
-    useEffect(() => {
-        if (!vantaRef.current) return;
-
-        // esperar a que VANTA exista (CDN)
-        if (window.VANTA) {
-            effectRef.current = window.VANTA.NET({
-                el: vantaRef.current,
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: false,
-                minHeight: 200,
-                minWidth: 200,
-                scale: 1,
-                scaleMobile: 1,
-                color: 0x3fb1ff,
-                backgroundColor: 0x0,
-                points: 17,
-                maxDistance: 24
-            });
-        }
-
-        return () => {
-            effectRef.current?.destroy();
-        };
-    }, []);
-
     return (
         <>
             <Navbar />
-
-            <div
-                id="vantaNet"
-                ref={vantaRef}   // ← correcto
-                style={{
-                    width: "100%",
-                    height: "100vh"
-                }}
-            >
-                <div className="HeroTextContainer">
-                    <h1 style={{width: "100%", margin: 0}}>INNOVAMOS <br /><b style={{
-                        background: "linear-gradient(90deg, #568ecb, #6cb9e5)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent"
-                    }}>EL MANAÑA</b>, HOY.</h1>
-                    <h3 style={{margin: 0}}>Soluciones de software y hardware que impulsan el crecimiento de tu negocio.</h3>
-                    <button className="HeroStartButton">EMPEZAR</button>
-                </div>
-            </div>
-
+            <Hero />
             <Services />
             <Footer />
         </>

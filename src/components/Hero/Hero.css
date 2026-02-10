@@ -1,0 +1,27 @@
+.HeroTextContainer {
+    z-index: 1;
+    position: relative;
+    color: white;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    font-family: "Roboto", sans-serif;
+    font-size: 2dvw;
+    margin-left: 10%;
+}
+
+.HeroStartButton {
+    margin: 10px;
+    border-radius: 100px;
+    padding: 5px 20px 5px 20px;
+    border: 0;
+    background: linear-gradient(90deg, #7253dc, #36a9e8);
+    color: white;
+    font-family: 'Roboto';
+    font-weight: bolder;
+    font-size: 1.12rem;
+    cursor: pointer;
+}

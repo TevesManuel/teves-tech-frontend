@@ -36,7 +36,7 @@ const Navbar = () => {
           <li className='li-nav-links'><a href="#services" onClick={() => setIsOpen(false)}>Servicios</a></li>
           <li className='li-nav-links'><a href="#solutions" onClick={() => setIsOpen(false)}>Soluciones</a></li>
           <li className='li-nav-links'><a href="#about" onClick={() => setIsOpen(false)}>Acerca de</a></li>
-          <li className='li-nav-links'><a href="#contact" className="nav-cta" onClick={() => setIsOpen(false)}>Contacto</a></li>
+          <li className='li-nav-links'><a href="#footer" className="nav-cta" onClick={() => setIsOpen(false)}>Contacto</a></li>
         </ul>
       </div>
     </nav>
