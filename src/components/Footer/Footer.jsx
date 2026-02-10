@@ -11,8 +11,8 @@ const Footer = () => {
         <div className="footer-column">
           <h4 className="footer-title">CONTACT</h4>
           <ul className="footer-links">
-            <li><i className="icon-phone"></i>+54 221 305-8662</li>
-            <li><i className="icon-mail"></i> contacto@tvs.ar</li>
+            <li><i className="icon-phone"></i><a href="https://tvs.ar/wsp">+54 221 305-8662</a></li>
+            <li><i className="icon-mail"></i><a href="mailto:contacto@tvs.ar">contacto@tvs.ar</a></li>
             <li><i className="icon-map"></i> La Plata, Buenos Aires, Argentina</li>
           </ul>
         </div>

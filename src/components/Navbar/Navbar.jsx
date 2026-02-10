@@ -34,8 +34,6 @@ const Navbar = () => {
         <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
           <li className='li-nav-links'><a href="#home" onClick={() => setIsOpen(false)}>Inicio</a></li>
           <li className='li-nav-links'><a href="#services" onClick={() => setIsOpen(false)}>Servicios</a></li>
-          <li className='li-nav-links'><a href="#solutions" onClick={() => setIsOpen(false)}>Soluciones</a></li>
-          <li className='li-nav-links'><a href="#about" onClick={() => setIsOpen(false)}>Acerca de</a></li>
           <li className='li-nav-links'><a href="#footer" className="nav-cta" onClick={() => setIsOpen(false)}>Contacto</a></li>
         </ul>
       </div>
@@ -44,3 +42,11 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+  // <li className='li-nav-links'><a href="#home" onClick={() => setIsOpen(false)}>Inicio</a></li>
+  //         <li className='li-nav-links'><a href="#services" onClick={() => setIsOpen(false)}>Servicios</a></li>
+  //         <li className='li-nav-links'><a href="#solutions" onClick={() => setIsOpen(false)}>Soluciones</a></li>
+  //         <li className='li-nav-links'><a href="#about" onClick={() => setIsOpen(false)}>Acerca de</a></li>
+  //         <li className='li-nav-links'><a href="#footer" className="nav-cta" onClick={() => setIsOpen(false)}>Contacto</a></li>
+        
