@@ -21,7 +21,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isOpen ? 'mobile-open' : ''}`}>
       <div className="container">
         <div className="logo">
-          <img src={tvsBanner} alt="Teves Tech Logo" style={{ width: "12rem" }} />
+          <img src={tvsBanner} alt="Teves Tech Logo" className='imgNavBar' />
         </div>
 
         {/* Botón Hamburguesa */}

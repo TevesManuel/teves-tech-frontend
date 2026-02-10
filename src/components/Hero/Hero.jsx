@@ -9,7 +9,6 @@ export default function Hero() {
         if (!vantaRef.current) return;
 
         if (window.VANTA) {
-            // Detectamos si es mobile para reducir la carga visual
             const isMobile = window.innerWidth < 768;
 
             effectRef.current = window.VANTA.NET({
@@ -24,13 +23,12 @@ export default function Hero() {
                 color: 0x3fb1ff,
                 backgroundColor: 0x0,
                 // --- AJUSTES PARA MOBILE ---
-                points: isMobile ? 17 : 17, // Menos puntos en mobile
-                maxDistance: isMobile ? 15 : 24, // Distancia más corta para que no se crucen tanto
-                spacing: isMobile ? 15 : 15, // Más espacio entre puntos si usas otras variantes
+                points: isMobile ? 17 : 17, 
+                maxDistance: isMobile ? 15 : 24,
+                spacing: isMobile ? 15 : 15,
             });
         }
 
-        // Opcional: Resize handler para que Vanta se entere si giras el celu
         const handleResize = () => {
             if (effectRef.current) {
                 effectRef.current.resize();
@@ -47,7 +45,7 @@ export default function Hero() {
     return (
         <div
             id="home"
-            ref={vantaRef}   // ← correcto
+            ref={vantaRef}
             style={{
                 width: "100%",
                 height: "100vh"
